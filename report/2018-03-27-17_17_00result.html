@@ -1,0 +1,1861 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>swagger-ui接口测试测试报告</title>
+    <meta name="generator" content="HTMLTestRunner 0.8.2"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    
+<style type="text/css" media="screen">
+body        { font-family: verdana, arial, helvetica, sans-serif; font-size: 80%; }
+table       { font-size: 100%; }
+pre         { }
+
+/* -- heading ---------------------------------------------------------------------- */
+h1 {
+	font-size: 16pt;
+	color: gray;
+}
+.heading {
+    margin-top: 0ex;
+    margin-bottom: 1ex;
+}
+
+.heading .attribute {
+    margin-top: 1ex;
+    margin-bottom: 0;
+}
+
+.heading .description {
+    margin-top: 4ex;
+    margin-bottom: 6ex;
+}
+
+/* -- css div popup ------------------------------------------------------------------------ */
+a.popup_link {
+}
+
+a.popup_link:hover {
+    color: red;
+}
+
+.popup_window {
+    display: none;
+    position: relative;
+    left: 0px;
+    top: 0px;
+    /*border: solid #627173 1px; */
+    padding: 10px;
+    background-color: #E6E6D6;
+    font-family: "Lucida Console", "Courier New", Courier, monospace;
+    text-align: left;
+    font-size: 8pt;
+    width: 500px;
+}
+
+}
+/* -- report ------------------------------------------------------------------------ */
+#show_detail_line {
+    margin-top: 3ex;
+    margin-bottom: 1ex;
+}
+#result_table {
+    width: 80%;
+    border-collapse: collapse;
+    border: 1px solid #777;
+}
+#header_row {
+    font-weight: bold;
+    color: white;
+    background-color: #777;
+}
+#result_table td {
+    border: 1px solid #777;
+    padding: 2px;
+}
+#total_row  { font-weight: bold; }
+.passClass  { background-color: #6c6; }
+.failClass  { background-color: #c60; }
+.errorClass { background-color: #c00; }
+.passCase   { color: #6c6; }
+.failCase   { color: #c60; font-weight: bold; }
+.errorCase  { color: #c00; font-weight: bold; }
+.hiddenRow  { display: none; }
+.testcase   { margin-left: 2em; }
+
+
+/* -- ending ---------------------------------------------------------------------- */
+#ending {
+}
+
+</style>
+
+</head>
+<body>
+<script language="javascript" type="text/javascript"><!--
+output_list = Array();
+
+/* level - 0:Summary; 1:Failed; 2:All */
+function showCase(level) {
+    trs = document.getElementsByTagName("tr");
+    for (var i = 0; i < trs.length; i++) {
+        tr = trs[i];
+        id = tr.id;
+        if (id.substr(0,2) == 'ft') {
+            if (level < 1) {
+                tr.className = 'hiddenRow';
+            }
+            else {
+                tr.className = '';
+            }
+        }
+        if (id.substr(0,2) == 'pt') {
+            if (level > 1) {
+                tr.className = '';
+            }
+            else {
+                tr.className = 'hiddenRow';
+            }
+        }
+    }
+}
+
+
+function showClassDetail(cid, count) {
+    var id_list = Array(count);
+    var toHide = 1;
+    for (var i = 0; i < count; i++) {
+        tid0 = 't' + cid.substr(1) + '.' + (i+1);
+        tid = 'f' + tid0;
+        tr = document.getElementById(tid);
+        if (!tr) {
+            tid = 'p' + tid0;
+            tr = document.getElementById(tid);
+        }
+        id_list[i] = tid;
+        if (tr.className) {
+            toHide = 0;
+        }
+    }
+    for (var i = 0; i < count; i++) {
+        tid = id_list[i];
+        if (toHide) {
+            document.getElementById('div_'+tid).style.display = 'none'
+            document.getElementById(tid).className = 'hiddenRow';
+        }
+        else {
+            document.getElementById(tid).className = '';
+        }
+    }
+}
+
+
+function showTestDetail(div_id){
+    var details_div = document.getElementById(div_id)
+    var displayState = details_div.style.display
+    // alert(displayState)
+    if (displayState != 'block' ) {
+        displayState = 'block'
+        details_div.style.display = 'block'
+    }
+    else {
+        details_div.style.display = 'none'
+    }
+}
+
+
+function html_escape(s) {
+    s = s.replace(/&/g,'&amp;');
+    s = s.replace(/</g,'&lt;');
+    s = s.replace(/>/g,'&gt;');
+    return s;
+}
+
+/* obsoleted by detail in <div>
+function showOutput(id, name) {
+    var w = window.open("", //url
+                    name,
+                    "resizable,scrollbars,status,width=800,height=450");
+    d = w.document;
+    d.write("<pre>");
+    d.write(html_escape(output_list[id]));
+    d.write("\n");
+    d.write("<a href='javascript:window.close()'>close</a>\n");
+    d.write("</pre>\n");
+    d.close();
+}
+*/
+--></script>
+
+<div class='heading'>
+<h1>swagger-ui接口测试测试报告</h1>
+<p class='attribute'><strong>Start Time:</strong> 2018-03-27 17:17:00</p>
+<p class='attribute'><strong>Duration:</strong> 0:00:07.273000</p>
+<p class='attribute'><strong>Status:</strong> Pass 67 Failure 34 Error 4</p>
+
+<p class='description'>用例执行情况：</p>
+</div>
+
+
+
+<p id='show_detail_line'>Show
+<a href='javascript:showCase(0)'>Summary</a>
+<a href='javascript:showCase(1)'>Failed</a>
+<a href='javascript:showCase(2)'>All</a>
+</p>
+<table id='result_table'>
+<colgroup>
+<col align='left' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+</colgroup>
+<tr id='header_row'>
+    <td>Test Group/Test case</td>
+    <td>Count</td>
+    <td>Pass</td>
+    <td>Fail</td>
+    <td>Error</td>
+    <td>View</td>
+</tr>
+
+<tr class='passClass'>
+    <td>captcha.test_captcha.Captcha: 获取验证码</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c1',1)">Detail</a></td>
+</tr>
+
+<tr id='pt1.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_Captcha10: 获取验证码:能正常请求</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr class='failClass'>
+    <td>dict.test_dict_add.DictAdd: 添加字典</td>
+    <td>6</td>
+    <td>2</td>
+    <td>4</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c2',6)">Detail</a></td>
+</tr>
+
+<tr id='ft2.1' class='none'>
+    <td class='failCase'><div class='testcase'>test_dict_add11: 添加字典:正常添加</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft2.1')" >
+        fail</a>
+
+    <div id='div_ft2.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft2.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft2.1: Traceback (most recent call last):
+  File "F:\swagger-ui\testcase\dict\test_dict_add.py", line 31, in test_dict_add11
+    assert success is True
+AssertionError
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft2.2' class='none'>
+    <td class='failCase'><div class='testcase'>test_dict_add12: 添加字典:父类字典不存在</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft2.2')" >
+        fail</a>
+
+    <div id='div_ft2.2' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft2.2').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft2.2: Traceback (most recent call last):
+  File "F:\swagger-ui\testcase\dict\test_dict_add.py", line 50, in test_dict_add12
+    assert msg == u'ç¶ç±»å­å¸ä¸å­å¨'
+AssertionError
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft2.3' class='none'>
+    <td class='failCase'><div class='testcase'>test_dict_add13: 添加字典:不是顶级字典</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft2.3')" >
+        fail</a>
+
+    <div id='div_ft2.3' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft2.3').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft2.3: Traceback (most recent call last):
+  File "F:\swagger-ui\testcase\dict\test_dict_add.py", line 65, in test_dict_add13
+    assert success is True
+AssertionError
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft2.4' class='none'>
+    <td class='failCase'><div class='testcase'>test_dict_add14: 添加字典:父类字典下的字典名称唯一</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft2.4')" >
+        fail</a>
+
+    <div id='div_ft2.4' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft2.4').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft2.4: Traceback (most recent call last):
+  File "F:\swagger-ui\testcase\dict\test_dict_add.py", line 88, in test_dict_add14
+    assert msg == u'å­å¸åç§°å·²ç»å­å¨'
+AssertionError
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt2.5' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_dict_add15: 添加字典:未登陆添加字典</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt2.6' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_dict_add16: 添加字典:无权限用户添加字典</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr class='errorClass'>
+    <td>dict.test_dict_delete.DictDelete: 删除字典</td>
+    <td>5</td>
+    <td>3</td>
+    <td>1</td>
+    <td>1</td>
+    <td><a href="javascript:showClassDetail('c3',5)">Detail</a></td>
+</tr>
+
+<tr id='ft3.1' class='none'>
+    <td class='errorCase'><div class='testcase'>test_dict_delete17: 删除字典:正常删除</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft3.1')" >
+        error</a>
+
+    <div id='div_ft3.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft3.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft3.1: Traceback (most recent call last):
+  File "F:\swagger-ui\testcase\dict\test_dict_delete.py", line 29, in test_dict_delete17
+    result1 = [query(sql1, self.name)[0]]
+TypeError: 'NoneType' object has no attribute '__getitem__'
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft3.2' class='none'>
+    <td class='failCase'><div class='testcase'>test_dict_delete18: 删除字典:删除不存在的字典</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft3.2')" >
+        fail</a>
+
+    <div id='div_ft3.2' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft3.2').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft3.2: Traceback (most recent call last):
+  File "F:\swagger-ui\testcase\dict\test_dict_delete.py", line 58, in test_dict_delete18
+    assert msg == u'æä½æå'
+AssertionError
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt3.3' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_dict_delete19: 删除字典:无权限用户删除字典</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt3.4' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_dict_delete20: 删除字典:传入数据非数组</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt3.5' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_dict_delete21: 删除字典:未登录删除字典</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr class='failClass'>
+    <td>dict.test_dict_page.DictPage: 检索字典</td>
+    <td>5</td>
+    <td>3</td>
+    <td>2</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c4',5)">Detail</a></td>
+</tr>
+
+<tr id='ft4.1' class='none'>
+    <td class='failCase'><div class='testcase'>test_dicts22: 检索字典:无参数直接查询</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft4.1')" >
+        fail</a>
+
+    <div id='div_ft4.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft4.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft4.1: Traceback (most recent call last):
+  File "F:\swagger-ui\testcase\dict\test_dict_page.py", line 25, in test_dicts22
+    self.assertEqual(msg,u'æä½æå')
+AssertionError: u'\u6ca1\u6709\u767b\u5f55' != u'\u64cd\u4f5c\u6210\u529f'
+- æ²¡æç»å½
++ æä½æå
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft4.2' class='none'>
+    <td class='failCase'><div class='testcase'>test_dicts23: 检索字典:输入参数查询</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft4.2')" >
+        fail</a>
+
+    <div id='div_ft4.2' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft4.2').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft4.2: Traceback (most recent call last):
+  File "F:\swagger-ui\testcase\dict\test_dict_page.py", line 42, in test_dicts23
+    self.assertEqual(msg, u'æä½æå')
+AssertionError: u'\u6ca1\u6709\u767b\u5f55' != u'\u64cd\u4f5c\u6210\u529f'
+- æ²¡æç»å½
++ æä½æå
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt4.3' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_dicts24: 检索字典:未登录查询</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt4.4' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_dicts25: 检索字典:无权限用户查询字典</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt4.5' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_dicts26: 检索字典:参数非int查询字典</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr class='failClass'>
+    <td>dict.test_dict_update.DictUpdate: 修改字典</td>
+    <td>8</td>
+    <td>6</td>
+    <td>2</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c5',8)">Detail</a></td>
+</tr>
+
+<tr id='ft5.1' class='none'>
+    <td class='failCase'><div class='testcase'>test_dict_update27: 修改字典:正常修改</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft5.1')" >
+        fail</a>
+
+    <div id='div_ft5.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft5.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft5.1: Traceback (most recent call last):
+  File "F:\swagger-ui\testcase\dict\test_dict_update.py", line 32, in test_dict_update27
+    self.assertEqual(msg, u'æä½æå')
+AssertionError: u'\u6ca1\u6709\u767b\u5f55' != u'\u64cd\u4f5c\u6210\u529f'
+- æ²¡æç»å½
++ æä½æå
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft5.2' class='none'>
+    <td class='failCase'><div class='testcase'>test_dict_update28: 修改字典:修改不存在的字典</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft5.2')" >
+        fail</a>
+
+    <div id='div_ft5.2' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft5.2').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft5.2: Traceback (most recent call last):
+  File "F:\swagger-ui\testcase\dict\test_dict_update.py", line 55, in test_dict_update28
+    self.assertEqual(msg, u'ä¿®æ¹å­å¸ä¿¡æ¯å¤±è´¥')
+AssertionError: u'\u6ca1\u6709\u767b\u5f55' != u'\u4fee\u6539\u5b57\u5178\u4fe1\u606f\u5931\u8d25'
+- æ²¡æç»å½
++ ä¿®æ¹å­å¸ä¿¡æ¯å¤±è´¥
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt5.3' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_dict_update29: 修改字典:无权限用户修改字典</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt5.4' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_dict_update30: 修改字典:未登陆修改字典</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt5.5' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_dict_update31: 修改字典:修改值为非整形数据类型</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt5.6' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_dict_update32: 修改字典:修改name超过50个字节</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt5.7' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_dict_update33: 修改字典:修改name为空</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt5.8' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_dict_update34: 修改字典:修改value为空</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr class='failClass'>
+    <td>log.test_log_delete.LogDelete: 删除系统日志</td>
+    <td>5</td>
+    <td>3</td>
+    <td>2</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c6',5)">Detail</a></td>
+</tr>
+
+<tr id='ft6.1' class='none'>
+    <td class='failCase'><div class='testcase'>test_log_delete35: 删除系统日志:正常删除日志</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft6.1')" >
+        fail</a>
+
+    <div id='div_ft6.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft6.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft6.1: Traceback (most recent call last):
+  File "F:\swagger-ui\testcase\log\test_log_delete.py", line 32, in test_log_delete35
+    self.assertEqual(msg, u'æä½æå')
+AssertionError: u'\u6ca1\u6709\u767b\u5f55' != u'\u64cd\u4f5c\u6210\u529f'
+- æ²¡æç»å½
++ æä½æå
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt6.2' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_log_delete36: 删除系统日志:未登录删除日志</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt6.3' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_log_delete37: 删除系统日志:无权限删除日志</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt6.4' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_log_delete38: 删除系统日志:传入数据有误删除日志</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='ft6.5' class='none'>
+    <td class='failCase'><div class='testcase'>test_log_delete39: 删除系统日志:批量删除日志</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft6.5')" >
+        fail</a>
+
+    <div id='div_ft6.5' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft6.5').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft6.5: Traceback (most recent call last):
+  File "F:\swagger-ui\testcase\log\test_log_delete.py", line 129, in test_log_delete39
+    self.assertEqual(msg, u'æä½æå')
+AssertionError: u'\u6ca1\u6709\u767b\u5f55' != u'\u64cd\u4f5c\u6210\u529f'
+- æ²¡æç»å½
++ æä½æå
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='errorClass'>
+    <td>log.test_log_page.LogPage: 分页检索系统日志列表</td>
+    <td>6</td>
+    <td>4</td>
+    <td>1</td>
+    <td>1</td>
+    <td><a href="javascript:showClassDetail('c7',6)">Detail</a></td>
+</tr>
+
+<tr id='ft7.1' class='none'>
+    <td class='errorCase'><div class='testcase'>test_log_page40: 分页检索系统日志列表:不输入参数查询日志</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft7.1')" >
+        error</a>
+
+    <div id='div_ft7.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft7.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft7.1: Traceback (most recent call last):
+  File "F:\swagger-ui\testcase\log\test_log_page.py", line 25, in test_log_page40
+    self.assertEqual(count, result['totalCount'] + 1)
+TypeError: 'NoneType' object has no attribute '__getitem__'
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt7.2' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_log_page41: 分页检索系统日志列表:无权限查询日志</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt7.3' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_log_page42: 分页检索系统日志列表:未登录查询日志</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='ft7.4' class='none'>
+    <td class='failCase'><div class='testcase'>test_log_page43: 分页检索系统日志列表:正常输入参数查询日志</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft7.4')" >
+        fail</a>
+
+    <div id='div_ft7.4' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft7.4').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft7.4: Traceback (most recent call last):
+  File "F:\swagger-ui\testcase\log\test_log_page.py", line 68, in test_log_page43
+    self.assertTrue(success)
+AssertionError: False is not true
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt7.5' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_log_page44: 分页检索系统日志列表:输入pageNum为字符串查询日志</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt7.6' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_log_page45: 分页检索系统日志列表:输入pageSize为字符串查询日志</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr class='failClass'>
+    <td>permission.test_permission_add.PerssionAdd: 添加权限</td>
+    <td>11</td>
+    <td>7</td>
+    <td>4</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c8',11)">Detail</a></td>
+</tr>
+
+<tr id='ft8.1' class='none'>
+    <td class='failCase'><div class='testcase'>test_permission_add46: 添加权限:直接创建权限</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft8.1')" >
+        fail</a>
+
+    <div id='div_ft8.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft8.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft8.1: Traceback (most recent call last):
+  File "F:\swagger-ui\testcase\permission\test_permission_add.py", line 33, in test_permission_add46
+    self.assertEqual(msg,u'æä½æå')
+AssertionError: u'\u6ca1\u6709\u767b\u5f55' != u'\u64cd\u4f5c\u6210\u529f'
+- æ²¡æç»å½
++ æä½æå
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft8.2' class='none'>
+    <td class='failCase'><div class='testcase'>test_permission_add47: 添加权限:name重复创建权限</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft8.2')" >
+        fail</a>
+
+    <div id='div_ft8.2' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft8.2').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft8.2: Traceback (most recent call last):
+  File "F:\swagger-ui\testcase\permission\test_permission_add.py", line 60, in test_permission_add47
+    self.assertEqual(msg, u'æéåç§°ææéæ è¯æUrlå·²ç»å­å¨')
+AssertionError: u'\u6ca1\u6709\u767b\u5f55' != u'\u6743\u9650\u540d\u79f0\u6216\u6743\u9650\u6807\u8bc6\u6216Url\u5df2\u7ecf\u5 [truncated]...
+- æ²¡æç»å½
++ æéåç§°ææéæ è¯æUrlå·²ç»å­å¨
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft8.3' class='none'>
+    <td class='failCase'><div class='testcase'>test_permission_add48: 添加权限:标识符重复创建权限</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft8.3')" >
+        fail</a>
+
+    <div id='div_ft8.3' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft8.3').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft8.3: Traceback (most recent call last):
+  File "F:\swagger-ui\testcase\permission\test_permission_add.py", line 87, in test_permission_add48
+    self.assertEqual(msg, u'æéåç§°ææéæ è¯æUrlå·²ç»å­å¨')
+AssertionError: u'\u6ca1\u6709\u767b\u5f55' != u'\u6743\u9650\u540d\u79f0\u6216\u6743\u9650\u6807\u8bc6\u6216Url\u5df2\u7ecf\u5 [truncated]...
+- æ²¡æç»å½
++ æéåç§°ææéæ è¯æUrlå·²ç»å­å¨
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt8.4' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_permission_add49: 添加权限:没权限创建权限</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt8.5' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_permission_add50: 添加权限:未登录创建权限</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt8.6' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_permission_add51: 添加权限:parent_id为空创建权限</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt8.7' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_permission_add52: 添加权限:name为空创建权限</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt8.8' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_permission_add53: 添加权限:resourceType为空创建权限</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt8.9' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_permission_add54: 添加权限:identify为空创建权限</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt8.10' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_permission_add55: 添加权限:name长度超过20创建权限</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='ft8.11' class='none'>
+    <td class='failCase'><div class='testcase'>test_permission_add56: 添加权限:url重复创建权限</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft8.11')" >
+        fail</a>
+
+    <div id='div_ft8.11' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft8.11').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft8.11: Traceback (most recent call last):
+  File "F:\swagger-ui\testcase\permission\test_permission_add.py", line 276, in test_permission_add56
+    self.assertEqual(msg, u'æéåç§°ææéæ è¯æUrlå·²ç»å­å¨')
+AssertionError: u'\u6ca1\u6709\u767b\u5f55' != u'\u6743\u9650\u540d\u79f0\u6216\u6743\u9650\u6807\u8bc6\u6216Url\u5df2\u7ecf\u5 [truncated]...
+- æ²¡æç»å½
++ æéåç§°ææéæ è¯æUrlå·²ç»å­å¨
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='failClass'>
+    <td>permission.test_permission_delete.PerssionDelete: 删除权限</td>
+    <td>5</td>
+    <td>3</td>
+    <td>2</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c9',5)">Detail</a></td>
+</tr>
+
+<tr id='ft9.1' class='none'>
+    <td class='failCase'><div class='testcase'>test_permission_delete57: 删除权限:直接删除权限</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft9.1')" >
+        fail</a>
+
+    <div id='div_ft9.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft9.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft9.1: Traceback (most recent call last):
+  File "F:\swagger-ui\testcase\permission\test_permission_delete.py", line 28, in test_permission_delete57
+    self.assertEqual(msg, u'æä½æå')
+AssertionError: u'\u6ca1\u6709\u767b\u5f55' != u'\u64cd\u4f5c\u6210\u529f'
+- æ²¡æç»å½
++ æä½æå
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft9.2' class='none'>
+    <td class='failCase'><div class='testcase'>test_permission_delete58: 删除权限:有子权限的直接删除权限</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft9.2')" >
+        fail</a>
+
+    <div id='div_ft9.2' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft9.2').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft9.2: Traceback (most recent call last):
+  File "F:\swagger-ui\testcase\permission\test_permission_delete.py", line 45, in test_permission_delete58
+    self.assertEqual(msg, u'ä¸è½å é¤æå­æéçæé')
+AssertionError: u'\u6ca1\u6709\u767b\u5f55' != u'\u4e0d\u80fd\u5220\u9664\u6709\u5b50\u6743\u9650\u7684\u6743\u9650'
+- æ²¡æç»å½
++ ä¸è½å é¤æå­æéçæé
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt9.3' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_permission_delete59: 删除权限:无权限删除权限</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt9.4' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_permission_delete60: 删除权限:未登录删除权限</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt9.5' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_permission_delete61: 删除权限:数组里面参数为string删除权限</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr class='failClass'>
+    <td>permission.test_permission_list.PerssionList: 获得所有权限（数组形式）</td>
+    <td>3</td>
+    <td>2</td>
+    <td>1</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c10',3)">Detail</a></td>
+</tr>
+
+<tr id='ft10.1' class='none'>
+    <td class='failCase'><div class='testcase'>test_permission_list62: 获得所有权限（数组形式):直接查询菜单权限</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft10.1')" >
+        fail</a>
+
+    <div id='div_ft10.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft10.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft10.1: Traceback (most recent call last):
+  File "F:\swagger-ui\testcase\permission\test_permission_list.py", line 25, in test_permission_list62
+    self.assertEqual(msg, u'æä½æå')
+AssertionError: u'\u6ca1\u6709\u767b\u5f55' != u'\u64cd\u4f5c\u6210\u529f'
+- æ²¡æç»å½
++ æä½æå
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt10.2' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_permission_list63: 获得所有权限（数组形式):无权限查询菜单权限</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt10.3' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_permission_list64: 获得所有权限（数组形式):没登录查询菜单权限</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr class='failClass'>
+    <td>permission.test_permission_menu.PerssionMenu: 查询用户的所有权限的菜单权限</td>
+    <td>3</td>
+    <td>2</td>
+    <td>1</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c11',3)">Detail</a></td>
+</tr>
+
+<tr id='ft11.1' class='none'>
+    <td class='failCase'><div class='testcase'>test_permission_menu65: 查询用户的所有权限的菜单权限:直接查询菜单权限</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft11.1')" >
+        fail</a>
+
+    <div id='div_ft11.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft11.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft11.1: Traceback (most recent call last):
+  File "F:\swagger-ui\testcase\permission\test_permission_menu.py", line 25, in test_permission_menu65
+    self.assertEqual(u'æä½æå', msg)
+AssertionError: u'\u64cd\u4f5c\u6210\u529f' != u'\u6ca1\u6709\u767b\u5f55'
+- æä½æå
++ æ²¡æç»å½
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt11.2' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_permission_menu66: 查询用户的所有权限的菜单权限:非admin用户查询菜单权限</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt11.3' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_permission_menu67: 查询用户的所有权限的菜单权限:没登录查询菜单权限</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr class='failClass'>
+    <td>permission.test_permission_tree.PerssionTree: 获得所有权限（树状形式）</td>
+    <td>3</td>
+    <td>2</td>
+    <td>1</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c12',3)">Detail</a></td>
+</tr>
+
+<tr id='ft12.1' class='none'>
+    <td class='failCase'><div class='testcase'>test_permission_menu68: 获得所有权限（树状形式）:直接查询（树状形式）</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft12.1')" >
+        fail</a>
+
+    <div id='div_ft12.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft12.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft12.1: Traceback (most recent call last):
+  File "F:\swagger-ui\testcase\permission\test_permission_tree.py", line 25, in test_permission_menu68
+    self.assertEqual(u'æä½æå', msg)
+AssertionError: u'\u64cd\u4f5c\u6210\u529f' != u'\u6ca1\u6709\u767b\u5f55'
+- æä½æå
++ æ²¡æç»å½
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt12.2' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_permission_menu69: 获得所有权限（树状形式）:无权限查询（树状形式）</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt12.3' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_permission_menu70: 获得所有权限（树状形式）:没登录查询（树状形式）</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr class='failClass'>
+    <td>permission.test_permission_update.PerssionUpdate: 更新权限</td>
+    <td>14</td>
+    <td>10</td>
+    <td>4</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c13',14)">Detail</a></td>
+</tr>
+
+<tr id='ft13.1' class='none'>
+    <td class='failCase'><div class='testcase'>test_permission_update71: 更新权限:正常修改权限</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft13.1')" >
+        fail</a>
+
+    <div id='div_ft13.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft13.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft13.1: Traceback (most recent call last):
+  File "F:\swagger-ui\testcase\permission\test_permission_update.py", line 45, in test_permission_update71
+    self.assertEqual(u'æä½æå', msg)
+AssertionError: u'\u64cd\u4f5c\u6210\u529f' != u'\u6ca1\u6709\u767b\u5f55'
+- æä½æå
++ æ²¡æç»å½
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt13.2' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_permission_update72: 更新权限:无权限修改权限</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt13.3' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_permission_update73: 更新权限:未登录修改权限</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt13.4' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_permission_update74: 更新权限:identify为空修改权限</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt13.5' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_permission_update75: 更新权限:name为空修改权限</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt13.6' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_permission_update76: 更新权限:id为空修改权限</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt13.7' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_permission_update77: 更新权限:resourceType为空修改权限</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='ft13.8' class='none'>
+    <td class='failCase'><div class='testcase'>test_permission_update78: 更新权限:name重复修改权限</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft13.8')" >
+        fail</a>
+
+    <div id='div_ft13.8' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft13.8').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft13.8: Traceback (most recent call last):
+  File "F:\swagger-ui\testcase\permission\test_permission_update.py", line 213, in test_permission_update78
+    self.assertEqual(u'æéåç§°ææéæ è¯æUrlå·²ç»å­å¨', msg)
+AssertionError: u'\u6743\u9650\u540d\u79f0\u6216\u6743\u9650\u6807\u8bc6\u6216Url\u5df2\u7ecf\u5 [truncated]... != u'\u6ca1\u6709\u767b\u5f55'
+- æéåç§°ææéæ è¯æUrlå·²ç»å­å¨
++ æ²¡æç»å½
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft13.9' class='none'>
+    <td class='failCase'><div class='testcase'>test_permission_update79: 更新权限:identify重复修改权限</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft13.9')" >
+        fail</a>
+
+    <div id='div_ft13.9' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft13.9').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft13.9: Traceback (most recent call last):
+  File "F:\swagger-ui\testcase\permission\test_permission_update.py", line 237, in test_permission_update79
+    self.assertEqual(u'æéåç§°ææéæ è¯æUrlå·²ç»å­å¨', msg)
+AssertionError: u'\u6743\u9650\u540d\u79f0\u6216\u6743\u9650\u6807\u8bc6\u6216Url\u5df2\u7ecf\u5 [truncated]... != u'\u6ca1\u6709\u767b\u5f55'
+- æéåç§°ææéæ è¯æUrlå·²ç»å­å¨
++ æ²¡æç»å½
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt13.10' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_permission_update80: 更新权限:resourceType类型错误修改权限</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt13.11' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_permission_update81: 更新权限:name类型错误修改权限</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt13.12' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_permission_update82: 更新权限:identify类型错误修改权限</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt13.13' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_permission_update83: 更新权限:id类型错误修改权限</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='ft13.14' class='none'>
+    <td class='failCase'><div class='testcase'>test_permission_update84: 更新权限:url重复修改权限</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft13.14')" >
+        fail</a>
+
+    <div id='div_ft13.14' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft13.14').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft13.14: Traceback (most recent call last):
+  File "F:\swagger-ui\testcase\permission\test_permission_update.py", line 360, in test_permission_update84
+    self.assertEqual(u'æéåç§°ææéæ è¯æUrlå·²ç»å­å¨', msg)
+AssertionError: u'\u6743\u9650\u540d\u79f0\u6216\u6743\u9650\u6807\u8bc6\u6216Url\u5df2\u7ecf\u5 [truncated]... != u'\u6ca1\u6709\u767b\u5f55'
+- æéåç§°ææéæ è¯æUrlå·²ç»å­å¨
++ æ²¡æç»å½
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='errorClass'>
+    <td>session.test_sessions.Sessions: 查询在线用户列表</td>
+    <td>4</td>
+    <td>2</td>
+    <td>1</td>
+    <td>1</td>
+    <td><a href="javascript:showClassDetail('c14',4)">Detail</a></td>
+</tr>
+
+<tr id='ft14.1' class='none'>
+    <td class='errorCase'><div class='testcase'>test_session9: 查询在线用户列表:同一个用户多地登录查询</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft14.1')" >
+        error</a>
+
+    <div id='div_ft14.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft14.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft14.1: Traceback (most recent call last):
+  File "F:\swagger-ui\testcase\session\test_sessions.py", line 57, in test_session9
+    for (result_set) in result:
+TypeError: 'NoneType' object is not iterable
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft14.2' class='none'>
+    <td class='failCase'><div class='testcase'>test_sessions6: 查询在线用户列表:admin查询</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft14.2')" >
+        fail</a>
+
+    <div id='div_ft14.2' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft14.2').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft14.2: Traceback (most recent call last):
+  File "F:\swagger-ui\testcase\session\test_sessions.py", line 19, in test_sessions6
+    assert msg == u'æä½æå'
+AssertionError
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt14.3' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_sessions7: 查询在线用户列表:无权限角色查询</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt14.4' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_sessions8: 查询在线用户列表:没有登录直接查询</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr class='errorClass'>
+    <td>session.test_session_delete.SessionDelete: 踢出用户</td>
+    <td>5</td>
+    <td>1</td>
+    <td>3</td>
+    <td>1</td>
+    <td><a href="javascript:showClassDetail('c15',5)">Detail</a></td>
+</tr>
+
+<tr id='ft15.1' class='none'>
+    <td class='failCase'><div class='testcase'>test_session_delete3: 踢出用户:不输入session_id</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft15.1')" >
+        fail</a>
+
+    <div id='div_ft15.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft15.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft15.1: Traceback (most recent call last):
+  File "F:\swagger-ui\testcase\session\test_session_delete.py", line 38, in test_session_delete3
+    self.assertIn('There is no session with id',msg)
+AssertionError: 'There is no session with id' not found in u'\u6ca1\u6709\u767b\u5f55'
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft15.2' class='none'>
+    <td class='failCase'><div class='testcase'>test_session_delete4: 踢出用户:输入不存在的session_id</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft15.2')" >
+        fail</a>
+
+    <div id='div_ft15.2' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft15.2').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft15.2: Traceback (most recent call last):
+  File "F:\swagger-ui\testcase\session\test_session_delete.py", line 47, in test_session_delete4
+    assert 'There is no session with id' in msg
+AssertionError
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt15.3' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_session_delete5: 踢出用户:权限不足</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='ft15.4' class='none'>
+    <td class='failCase'><div class='testcase'>test_sessions_delete1: 踢出用户:admin踢出其他用户</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft15.4')" >
+        fail</a>
+
+    <div id='div_ft15.4' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft15.4').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft15.4: Traceback (most recent call last):
+  File "F:\swagger-ui\testcase\session\test_session_delete.py", line 20, in test_sessions_delete1
+    assert msg == u'æä½æå'
+AssertionError
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft15.5' class='none'>
+    <td class='errorCase'><div class='testcase'>test_sessions_delete2: 踢出用户:踢出自己</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft15.5')" >
+        error</a>
+
+    <div id='div_ft15.5' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft15.5').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft15.5: Traceback (most recent call last):
+  File "F:\swagger-ui\testcase\session\test_session_delete.py", line 26, in test_sessions_delete2
+    response = self.session.post(delete_api, data={'sessionId': self.session.cookies.values()[0]})
+IndexError: list index out of range
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='failClass'>
+    <td>user.test_user_login.UserLogin: 用户登录</td>
+    <td>7</td>
+    <td>2</td>
+    <td>5</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c16',7)">Detail</a></td>
+</tr>
+
+<tr id='ft16.1' class='none'>
+    <td class='failCase'><div class='testcase'>test_user_login85: 用户登录:数据库存在用户登录</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft16.1')" >
+        fail</a>
+
+    <div id='div_ft16.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft16.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft16.1: Traceback (most recent call last):
+  File "F:\swagger-ui\testcase\user\test_user_login.py", line 21, in test_user_login85
+    self.assertEqual(u'æä½æå', msg)
+AssertionError: u'\u64cd\u4f5c\u6210\u529f' != u'[username\u7528\u6237\u540d\u53ea\u80fd\u662f6-25\u4f4d\u7684\u5b57\u7b26]'
+- æä½æå
++ [usernameç¨æ·ååªè½æ¯6-25ä½çå­ç¬¦]
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt16.2' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_user_login86: 用户登录:数据库不存在用户登录</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt16.3' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_user_login87: 用户登录:数据库停用用户登录</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='ft16.4' class='none'>
+    <td class='failCase'><div class='testcase'>test_user_login88: 用户登录:不输入密码登录</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft16.4')" >
+        fail</a>
+
+    <div id='div_ft16.4' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft16.4').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft16.4: Traceback (most recent call last):
+  File "F:\swagger-ui\testcase\user\test_user_login.py", line 53, in test_user_login88
+    self.assertEqual(u'ç¨æ·åæå¯ç éè¯¯', msg)
+AssertionError: u'\u7528\u6237\u540d\u6216\u5bc6\u7801\u9519\u8bef' != u'[password\u4e0d\u80fd\u4e3a\u7a7a, username\u7528\u6237\u540d\u53ea\u80fd\u662 [truncated]...
+- ç¨æ·åæå¯ç éè¯¯
++ [passwordä¸è½ä¸ºç©º, usernameç¨æ·ååªè½æ¯6-25ä½çå­ç¬¦]
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft16.5' class='none'>
+    <td class='failCase'><div class='testcase'>test_user_login89: 用户登录:不选择rememberMe字段登录</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft16.5')" >
+        fail</a>
+
+    <div id='div_ft16.5' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft16.5').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft16.5: Traceback (most recent call last):
+  File "F:\swagger-ui\testcase\user\test_user_login.py", line 67, in test_user_login89
+    self.assertEqual(u'ç¨æ·åæå¯ç éè¯¯', msg)
+AssertionError: u'\u7528\u6237\u540d\u6216\u5bc6\u7801\u9519\u8bef' != u'[rememberMe\u4e0d\u80fd\u4e3anull, username\u7528\u6237\u540d\u53ea\u80fd\u662 [truncated]...
+- ç¨æ·åæå¯ç éè¯¯
++ [rememberMeä¸è½ä¸ºnull, usernameç¨æ·ååªè½æ¯6-25ä½çå­ç¬¦]
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft16.6' class='none'>
+    <td class='failCase'><div class='testcase'>test_user_login90: 用户登录:不输入用户名登录</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft16.6')" >
+        fail</a>
+
+    <div id='div_ft16.6' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft16.6').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft16.6: Traceback (most recent call last):
+  File "F:\swagger-ui\testcase\user\test_user_login.py", line 81, in test_user_login90
+    self.assertEqual(u'ç¨æ·åæå¯ç éè¯¯', msg)
+AssertionError: u'\u7528\u6237\u540d\u6216\u5bc6\u7801\u9519\u8bef' != u'[username\u4e0d\u80fd\u4e3a\u7a7a]'
+- ç¨æ·åæå¯ç éè¯¯
++ [usernameä¸è½ä¸ºç©º]
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft16.7' class='none'>
+    <td class='failCase'><div class='testcase'>test_user_login91: 用户登录:输入错误密码登录</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft16.7')" >
+        fail</a>
+
+    <div id='div_ft16.7' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft16.7').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft16.7: Traceback (most recent call last):
+  File "F:\swagger-ui\testcase\user\test_user_login.py", line 95, in test_user_login91
+    self.assertEqual(u'ç¨æ·åæå¯ç éè¯¯', msg)
+AssertionError: u'\u7528\u6237\u540d\u6216\u5bc6\u7801\u9519\u8bef' != u'[username\u7528\u6237\u540d\u53ea\u80fd\u662f6-25\u4f4d\u7684\u5b57\u7b26]'
+- ç¨æ·åæå¯ç éè¯¯
++ [usernameç¨æ·ååªè½æ¯6-25ä½çå­ç¬¦]
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>user.test_user_register.UserRegister: 用户注册</td>
+    <td>14</td>
+    <td>14</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c17',14)">Detail</a></td>
+</tr>
+
+<tr id='pt17.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_user_register100: 用户注册:使用已注销的username注册</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt17.2' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_user_register101: 用户注册:注册数据库已存在的name用户</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt17.3' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_user_register102: 用户注册:注册数据库已存在的name的注销用户</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt17.4' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_user_register103: 用户注册:注册（username长度6位，name6位）</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt17.5' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_user_register104: 用户注册:注册（密码5位）</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt17.6' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_user_register105: 用户注册:注册（密码15位）</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt17.7' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_user_register92: 用户注册:正常注册（username长度25位）</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt17.8' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_user_register93: 用户注册:注册数据库已存在的username用户</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt17.9' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_user_register94: 用户注册:不输入username注册</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt17.10' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_user_register95: 用户注册:不输入name注册</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt17.11' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_user_register96: 用户注册:不输入密码注册</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt17.12' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_user_register97: 用户注册:正常注册（username长度低于6位）</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt17.13' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_user_register98: 用户注册:不选择性别注册</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt17.14' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_user_register99: 用户注册:username长度超过25注册</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='total_row'>
+    <td>Total</td>
+    <td>105</td>
+    <td>67</td>
+    <td>34</td>
+    <td>4</td>
+    <td>&nbsp;</td>
+</tr>
+</table>
+
+<div id='ending'>&nbsp;</div>
+
+</body>
+</html>
